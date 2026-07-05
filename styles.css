@@ -427,7 +427,7 @@ h2 {
 
 .invite-text,
 .paper__intro p:not(.eyebrow) {
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .countdown {
@@ -1190,12 +1190,12 @@ h2 {
   }
 
   .paper__intro p:not(.eyebrow) {
-    font-size: clamp(14px, 3.7vw, 16px);
+    font-size: clamp(14.5px, 3.85vw, 16.5px);
     letter-spacing: 0;
   }
 
   .invite-text {
-    font-size: clamp(14px, 3.7vw, 16px);
+    font-size: clamp(14.5px, 3.85vw, 16.5px);
   }
 
   .paper__intro h2 {
@@ -1278,11 +1278,11 @@ h2 {
   }
 
   .paper__intro p:not(.eyebrow) {
-    font-size: clamp(13px, 3.45vw, 14.5px);
+    font-size: clamp(13.5px, 3.58vw, 15px);
   }
 
   .invite-text {
-    font-size: clamp(13px, 3.45vw, 14.5px);
+    font-size: clamp(13.5px, 3.58vw, 15px);
   }
 
   .paper__intro h2 {
@@ -1332,11 +1332,11 @@ h2 {
   }
 
   .paper__intro p:not(.eyebrow) {
-    font-size: 12.8px;
+    font-size: 13.2px;
   }
 
   .invite-text {
-    font-size: 12.8px;
+    font-size: 13.2px;
   }
 
   .paper__intro h2 {
