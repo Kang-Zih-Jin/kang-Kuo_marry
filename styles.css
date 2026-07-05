@@ -198,14 +198,22 @@ h2 {
   line-height: 1.22;
 }
 
-h1 {
-  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
-  font-size: clamp(48px, 8vw, 104px);
+.couple-name {
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 600;
+  letter-spacing: .16em;
+  line-height: 1.35;
+  color: var(--ink);
+  white-space: nowrap;
 }
 
-h1 span {
+.couple-name span {
   color: var(--petal);
-  font-size: .58em;
+  font-family: "Cormorant Garamond", serif;
+  font-size: .86em;
+  font-weight: 400;
+  letter-spacing: .04em;
 }
 
 h2 {
@@ -213,10 +221,11 @@ h2 {
 }
 
 .date {
-  margin: 22px 0 0;
+  margin: 26px 0 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(26px, 4vw, 42px);
+  font-size: clamp(24px, 3.2vw, 36px);
   color: var(--sage);
+  letter-spacing: .08em;
 }
 
 .tiny-divider {
@@ -790,6 +799,20 @@ h2 {
     padding: 32px 26px;
   }
 
+  .couple-name {
+    text-align: center;
+    font-size: clamp(25px, 6.4vw, 34px);
+    letter-spacing: .1em;
+  }
+
+  .date,
+  .tiny-divider,
+  .invite-text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
   .cover__card::before {
     inset: 10px;
   }
@@ -828,10 +851,6 @@ h2 {
 }
 
 @media (max-width: 420px) {
-  h1 {
-    font-size: clamp(40px, 16vw, 58px);
-  }
-
   h2 {
     font-size: 25px;
   }
@@ -856,6 +875,11 @@ h2 {
 
   .date {
     font-size: 25px;
+  }
+
+  .couple-name {
+    font-size: clamp(22px, 6vw, 28px);
+    letter-spacing: .08em;
   }
 
   .paper {
@@ -888,12 +912,13 @@ h2 {
     line-height: 1.75;
   }
 
-  h1 {
-    font-size: 38px;
-  }
-
   h2 {
     font-size: 23px;
+  }
+
+  .couple-name {
+    font-size: 21px;
+    letter-spacing: .06em;
   }
 
   .cover__card {
