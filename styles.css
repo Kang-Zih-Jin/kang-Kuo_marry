@@ -510,6 +510,8 @@ h2 {
   position: relative;
   display: inline-block;
   font-size: clamp(28px, 3.2vw, 44px);
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .paper__intro h2::after {
@@ -1082,7 +1084,8 @@ h2 {
   }
 
   .paper__intro h2 {
-    font-size: clamp(21px, 5.25vw, 28px);
+    font-size: clamp(17px, 4.4vw, 23px);
+    letter-spacing: 0;
   }
 
   .cover__card::before {
@@ -1164,7 +1167,7 @@ h2 {
   }
 
   .paper__intro h2 {
-    font-size: clamp(19px, 5vw, 23px);
+    font-size: clamp(15px, 4vw, 18px);
   }
 
   .button {
@@ -1214,7 +1217,7 @@ h2 {
   }
 
   .paper__intro h2 {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .timeline time {
