@@ -1,4 +1,16 @@
 const weddingDate = new Date("2026-09-27T12:00:00+08:00");
+const openingOverlay = document.querySelector(".opening-overlay");
+
+if (sessionStorage.getItem("weddingOpeningSeen") === "true") {
+  document.body.classList.add("opening-seen");
+} else {
+  openingOverlay?.addEventListener("animationend", (event) => {
+    if (event.target === openingOverlay) {
+      sessionStorage.setItem("weddingOpeningSeen", "true");
+    }
+  });
+}
+
 const dayEl = document.querySelector("[data-countdown-days]");
 const hourEl = document.querySelector("[data-countdown-hours]");
 const minuteEl = document.querySelector("[data-countdown-minutes]");
