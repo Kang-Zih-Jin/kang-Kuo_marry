@@ -425,6 +425,11 @@ h2 {
   color: var(--muted);
 }
 
+.invite-text,
+.paper__intro p:not(.eyebrow) {
+  font-size: 16px;
+}
+
 .countdown {
   display: grid;
   grid-template-columns: repeat(3, minmax(74px, 1fr));
@@ -1189,6 +1194,10 @@ h2 {
     letter-spacing: 0;
   }
 
+  .invite-text {
+    font-size: clamp(13px, 3.45vw, 15px);
+  }
+
   .paper__intro h2 {
     font-size: clamp(17px, 4.4vw, 23px);
     letter-spacing: 0;
@@ -1272,6 +1281,10 @@ h2 {
     font-size: clamp(12.5px, 3.35vw, 14px);
   }
 
+  .invite-text {
+    font-size: clamp(12.5px, 3.35vw, 14px);
+  }
+
   .paper__intro h2 {
     font-size: clamp(15px, 4vw, 18px);
   }
@@ -1319,6 +1332,10 @@ h2 {
   }
 
   .paper__intro p:not(.eyebrow) {
+    font-size: 12px;
+  }
+
+  .invite-text {
     font-size: 12px;
   }
 
