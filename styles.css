@@ -806,6 +806,10 @@ h2 {
     letter-spacing: .1em;
   }
 
+  .cover__card > .eyebrow {
+    text-align: center;
+  }
+
   .date,
   .tiny-divider,
   .invite-text {
