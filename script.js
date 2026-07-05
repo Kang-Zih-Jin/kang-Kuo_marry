@@ -14,14 +14,26 @@ if (sessionStorage.getItem("weddingOpeningSeen") === "true") {
 const dayEl = document.querySelector("[data-countdown-days]");
 const hourEl = document.querySelector("[data-countdown-hours]");
 const minuteEl = document.querySelector("[data-countdown-minutes]");
+const countdownEls = [dayEl, hourEl, minuteEl];
+let previousCountdown = [];
+
+function setCountdownValue(element, value, index) {
+  if (!element) return;
+
+  if (previousCountdown[index] !== value) {
+    element.textContent = value;
+    element.classList.remove("is-ticking");
+    void element.offsetWidth;
+    element.classList.add("is-ticking");
+    previousCountdown[index] = value;
+  }
+}
 
 function updateCountdown() {
   const diff = weddingDate.getTime() - Date.now();
 
   if (diff <= 0) {
-    dayEl.textContent = "0";
-    hourEl.textContent = "0";
-    minuteEl.textContent = "0";
+    ["0", "0", "0"].forEach((value, index) => setCountdownValue(countdownEls[index], value, index));
     return;
   }
 
@@ -30,9 +42,8 @@ function updateCountdown() {
   const hours = Math.floor((totalMinutes % 1440) / 60);
   const minutes = totalMinutes % 60;
 
-  dayEl.textContent = String(days);
-  hourEl.textContent = String(hours).padStart(2, "0");
-  minuteEl.textContent = String(minutes).padStart(2, "0");
+  [String(days), String(hours).padStart(2, "0"), String(minutes).padStart(2, "0")]
+    .forEach((value, index) => setCountdownValue(countdownEls[index], value, index));
 }
 
 updateCountdown();
