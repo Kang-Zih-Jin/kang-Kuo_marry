@@ -48,6 +48,53 @@ body::before {
   animation: ambientShift 16s ease-in-out infinite alternate;
 }
 
+.opening-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  color: var(--clay);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 253, 248, .98), rgba(255, 253, 248, .82) 42%, rgba(248, 245, 238, .74)),
+    var(--ivory);
+  pointer-events: none;
+  animation: openingFade 2.35s cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+.opening-overlay div {
+  text-align: center;
+  animation: openingText 1.55s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.opening-overlay p {
+  margin: 0 0 12px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(16px, 4vw, 22px);
+  text-transform: uppercase;
+}
+
+.opening-overlay strong {
+  display: block;
+  color: var(--hero-name);
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(28px, 8vw, 48px);
+  font-weight: 600;
+  letter-spacing: .12em;
+  padding-left: .12em;
+  white-space: nowrap;
+}
+
+.opening-overlay span {
+  display: block;
+  margin-top: 14px;
+  color: var(--hero-date);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(22px, 6vw, 34px);
+  letter-spacing: .08em;
+}
+
 .sakura-field {
   position: fixed;
   inset: 0;
@@ -215,6 +262,24 @@ a {
   min-width: 0;
   animation: cardReveal 1s .18s cubic-bezier(.16, 1, .3, 1) both;
 }
+
+.cover__card > .eyebrow,
+.couple-name,
+.date,
+.tiny-divider,
+.invite-text,
+.countdown,
+.cover__actions {
+  animation: heroItemReveal .8s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.cover__card > .eyebrow { animation-delay: 1.75s; }
+.couple-name { animation-delay: 1.86s; }
+.date { animation-delay: 1.98s; }
+.tiny-divider { animation-delay: 2.06s; }
+.invite-text { animation-delay: 2.14s; }
+.countdown { animation-delay: 2.22s; }
+.cover__actions { animation-delay: 2.3s; }
 
 .cover__card::before {
   content: "";
@@ -675,6 +740,48 @@ h2 {
   }
 }
 
+@keyframes openingFade {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  72% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes openingText {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(.98);
+  }
+  35%,
+  78% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-12px) scale(1.01);
+  }
+}
+
+@keyframes heroItemReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes photoRise {
   from {
     opacity: 0;
@@ -1054,6 +1161,10 @@ h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .opening-overlay {
+    display: none;
+  }
+
   *,
   *::before,
   *::after {
