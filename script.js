@@ -62,7 +62,7 @@ document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(it
 
 const copyButton = document.querySelector("[data-copy-link]");
 const copyStatus = document.querySelector("[data-copy-status]");
-const shareUrl = "https://kang-zih-jin.github.io/kang-Kuo_marry/";
+const shareUrl = "https://kang-zih-jin.github.io/kang-Kuo_marry/?v=20260718";
 
 copyButton?.addEventListener("click", async () => {
   try {
